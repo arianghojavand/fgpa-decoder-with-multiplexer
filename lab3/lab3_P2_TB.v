@@ -16,18 +16,33 @@ module lab3_P2_TB;
  	
 	initial begin 
 		count = 4'b0000;
+
+		
+		$dumpfile("l3p2.vcd");
+        $dumpvars(0, lab3_P2_TB);
+
+        $display("time\tcount\ts\tu\tv\tw\tx\toutput");
+        $monitor("%0t\t%b\t%b\t%b\t%b\t%b\t%b\t%b", $time, count, S, U, V, W, X, output_7seg);
+		
 	end
 	
 	always begin
 		#50
 		count=count+4'b0001;
+
+		if (count == 4'b0011)
+			$finish;
+
 	end
 	
 	always @(count) begin
 		case (count)
 		4'b0000 : begin S = 2'b00; U = 2'b00; V = 2'b01; W = 2'b10; X = 2'b11; end
+		4'b0001 : begin S = 2'b01; U = 2'b00; V = 2'b01; W = 2'b10; X = 2'b11; end
+		4'b0010 : begin S = 2'b10; U = 2'b00; V = 2'b01; W = 2'b10; X = 2'b11; end
+		4'b0011 : begin S = 2'b11; U = 2'b00; V = 2'b01; W = 2'b10; X = 2'b11; end
 		// Add other relevant test cases and complete default case
-		default : begin ... end
+		//default : begin ... end
 	endcase
 	end
 

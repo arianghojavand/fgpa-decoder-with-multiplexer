@@ -1,0 +1,14 @@
+# Ignore simulation/output artifacts
+*.vcd
+sim
+*.out
+*.log
+
+# Common generated files
+*.o
+*.obj
+*.exe
+
+# Editor/system files
+.DS_Store
+Thumbs.db

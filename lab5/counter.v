@@ -19,7 +19,7 @@ module counter #(parameter N = 16) (clk, clear, enable, Q);
 
     generate
         for (i = 0; i < N; i = i + 1) begin: gen_ff
-            tff ff(clk, clear, T[i], Q[i]);
+            toggle_ff ff(clk, clear, T[i], Q[i]);
         end
     endgenerate
 

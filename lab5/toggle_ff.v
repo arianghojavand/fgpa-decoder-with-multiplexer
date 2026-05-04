@@ -1,4 +1,4 @@
-module tff(clk, clear, T, Q);
+module toggle_ff(clk, clear, T, Q);
     input clk;
     input clear;
     input T;

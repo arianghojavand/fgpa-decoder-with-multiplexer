@@ -1,4 +1,4 @@
-module top(clk, clear, out);
+module counter_top(clk, clear, out);
     input clk;          
     input clear;        
     output [6:0] out;
